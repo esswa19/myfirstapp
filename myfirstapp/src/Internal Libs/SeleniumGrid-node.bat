@@ -21,4 +21,4 @@ set ie2=\Drivers\IEorEdgeDriver\IEDriverServer.exe
 set iedriver=%q%%ie1%%ie2%%q%
 
 cd %node%
-java -jar -Dwebdriver.chrome.driver=%chromedriver% -Dwebdriver.firefox.driver=%firefoxdriver% -Dwebdriver.ie.driver=%iedriver% selenium-server-standalone-3.8.1.jar -role node -hub http://localhost:4444/grid/register -port 5566 -browser browserName=firefox,maxInstances=2 -browser browserName=ie,maxInstances=2 -browser browserName=chrome,maxInstances=2 -maxSession 2
+java -jar -Dwebdriver.chrome.driver=%chromedriver% -Dwebdriver.firefox.driver=%firefoxdriver% -Dwebdriver.ie.driver=%iedriver% selenium-server-standalone-3.8.1.jar -role node -browser "browserName=firefox, maxInstances=2, platform=WIN10" -browser "browserName=ie, maxInstances=2, platform=WIN10" -browser "browserName=chrome, maxInstances=2, platform=WIN10" -maxSession 2 -hub http://localhost:4444/grid/register
